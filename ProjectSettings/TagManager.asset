@@ -41,18 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Base
-    uniqueID: 649060673
-    locked: 0
-  - name: bush & rock layer
+  - name: MapDesignCollisionsLayer
     uniqueID: 2583515119
     locked: 0
   - name: Water
     uniqueID: 840114787
     locked: 0
-  - name: LilyPad
+  - name: DecorLayer
     uniqueID: 3457448571
-    locked: 0
-  - name: Player
-    uniqueID: 2458163693
     locked: 0

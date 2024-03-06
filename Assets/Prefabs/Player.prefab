@@ -103,7 +103,8 @@ GameObject:
   - component: {fileID: 4642140525149100768}
   - component: {fileID: 2483904474876969477}
   - component: {fileID: 601204783784382816}
-  - component: {fileID: 2335766713519631057}
+  - component: {fileID: 6687217493321501607}
+  - component: {fileID: -6526901138177890594}
   - component: {fileID: 7070822500598834796}
   m_Layer: 0
   m_Name: Player
@@ -167,9 +168,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1836803603
-  m_SortingLayer: 5
+  m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0ccc508108fa6ed4fa11b4a467d7f609, type: 3}
+  m_Sprite: {fileID: -615768109, guid: f3594a0d02c68b3498648dad6355c0a9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -207,8 +208,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &2335766713519631057
-BoxCollider2D:
+--- !u!68 &6687217493321501607
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -240,18 +241,50 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.19440866, y: 0.04087481}
+  - {x: -0.19694495, y: 0.19440863}
+  - {x: -0.23866999, y: 0.22972074}
+  - {x: -0.23410612, y: 0.4412958}
+  - {x: -0.19670504, y: 0.4960311}
+  - {x: -0.17597818, y: 0.5083308}
+  - {x: -0.161461, y: 0.70177704}
+  - {x: -0.114040375, y: 0.7633367}
+  - {x: 0.098847985, y: 0.7672831}
+  - {x: 0.16790342, y: 0.7020643}
+  - {x: 0.18370485, y: 0.50976926}
+  - {x: 0.21757114, y: 0.45680115}
+  - {x: 0.24784243, y: 0.38449174}
+  - {x: 0.23615348, y: 0.20268151}
+  - {x: 0.17796671, y: 0.19174996}
+  - {x: 0.1816845, y: 0.031403393}
+  - {x: -0.18942583, y: 0.030540824}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
+--- !u!95 &-6526901138177890594
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664753791857735624}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: abfe747bb14453943b2cd8cc7684d936, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &7070822500598834796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,5 +297,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9c388e3f26dec044ab1ee099a84218c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 150
-  jumpSpeed: 5
+  moveSpeed: 700
+  movement: {x: 0, y: 0}

@@ -8,16 +8,21 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float moveSpeed = 600f;
     [SerializeField] private Vector2 movement;
 
+    private Animator animator;
+
     private void Awake()
     {
         //get the rigidbody component
         rb = GetComponent<Rigidbody2D>();
+        //get animator component
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
         Movement();
+        Animation();
     }
 
     private void Movement()
@@ -46,5 +51,21 @@ public class PlayerMovement : MonoBehaviour
 
         rb.velocity = movement * Time.fixedDeltaTime;
 
+    }
+    //get the X and Y float direction for the animation
+    private void Animation()
+    { 
+        if (movement.x != 0 || movement.y != 0)
+        {
+            animator.SetFloat("X", movement.x);
+            animator.SetFloat("Y", movement.y);
+
+            //change the animation from idle to the walking animation
+            animator.SetBool("IsWalking", true);
+        }
+        else
+        {
+            animator.SetBool("IsWalking", false);
+        }     
     }
 }
