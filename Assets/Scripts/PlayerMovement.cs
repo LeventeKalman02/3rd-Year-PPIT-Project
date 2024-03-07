@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         Movement();
-        Animation();
+        MovementAnimation();
     }
 
     private void Movement()
@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
 
     }
     //get the X and Y float direction for the animation
-    private void Animation()
+    private void MovementAnimation()
     { 
         if (movement.x != 0 || movement.y != 0)
         {
