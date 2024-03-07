@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //call functions in update
         Movement();
         MovementAnimation();
     }
@@ -57,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
     { 
         if (movement.x != 0 || movement.y != 0)
         {
+            //set the float for X and Y in the animatior from the movement variable
             animator.SetFloat("X", movement.x);
             animator.SetFloat("Y", movement.y);
 
@@ -64,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("IsWalking", true);
         }
         else
-        {
+        {   // if player if not moving the have idle animation
             animator.SetBool("IsWalking", false);
         }     
     }
