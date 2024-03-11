@@ -9,9 +9,10 @@ public class PortalTeleport : MonoBehaviour
     //when player enters the portal, transfer to the fighting arena
     private void OnTriggerEnter2D(Collider2D other)
     {
+        //check for the Player tag
         if (other.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene("GameScene");
+            SceneManager.LoadScene("ArenaScene");
         }
     }
 }
