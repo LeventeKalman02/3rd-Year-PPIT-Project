@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagerScript : MonoBehaviour
 {
+    //public Animator transition;
+    //public float transitionTime = 1f;
+
     private List<string> sceneHistory = new List<string>(); //running history of scenes
     //The last string in the list is always the current scene running
 
@@ -16,16 +19,16 @@ public class SceneManagerScript : MonoBehaviour
         sceneHistory.Add(SceneManager.GetActiveScene().name);
     }
 
-    //It will add the new scene to the sceneHistory list then load the scene
+    //Add the new scene to the sceneHistory list then load the scene
     public void LoadScene(string newScene)
     {
-        
         sceneHistory.Add(newScene);
         SceneManager.LoadScene(newScene);
+        //(TransitionScene(SceneManager.GetActiveScene().name));
     }
 
-    //It will remove the current scene from the history and then load the new last scene in the history
-    //It will return false if we have not moved between scenes enough to have stored a previous scene in the history
+    //Remove the current scene from the history and then load the new last scene in the history
+    //Return false if we have not moved between scenes enough to have stored a previous scene in the history
     public bool PreviousScene()
     {
         bool returnValue = false;
@@ -37,6 +40,8 @@ public class SceneManagerScript : MonoBehaviour
         }
 
         sceneHistory.Add(SceneManager.GetActiveScene().name);
+        //StartCoroutine(TransitionScene(SceneManager.GetActiveScene().name));
+
         return returnValue;
     }
 
@@ -64,4 +69,20 @@ public class SceneManagerScript : MonoBehaviour
     {
         PreviousScene();
     }
+
+
+    //WIP
+
+    //Coroutine for animation and delay
+    //IEnumerator TransitionScene(string newScene)
+    //{
+    //    //play animation
+    //    transition.SetTrigger("Start");
+
+    //    //wait for the animation to play
+    //    yield return new WaitForSeconds(transitionTime);
+
+    //    sceneHistory.Add(newScene);
+    //    SceneManager.LoadScene(newScene);
+    //}
 }
