@@ -1,37 +1,46 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneTransitionScript : MonoBehaviour
 {
+    //singleton
+    public static SceneTransitionScript instance;
+
     //getting the animator and setting transition time default. Can be changed in editor
     public Animator transition;
     public float transitionTime = 1f;
 
-    private SceneManagerScript sceneLoad;
-
-    private void Start()
+    private void Awake()
     {
         //make sure object persists so that the animation can be used throughout the game
-        DontDestroyOnLoad(this.gameObject);
+        if (instance == null)
+            instance = this;
+        else if (instance != this)
+            Destroy(gameObject);
+        DontDestroyOnLoad(gameObject);
     }
 
     //call the Coroutine
-    public void StartAnimation()
+    public void StartAnimation(string scene)
     {
-        StartCoroutine(TransitionScene());
+        StartCoroutine(TransitionScene(scene));
     }
 
     //Coroutine for animation and delay
-    IEnumerator TransitionScene()
+    IEnumerator TransitionScene(string scene)
     {
-        //play animation
-        transition.SetTrigger("Start");
-
+        //play fade out animation
+        transition.SetTrigger("End");
+        
         //wait for the animation to play
         yield return new WaitForSeconds(transitionTime);
 
-        sceneLoad.LoadScene("MainBaseScene");
+        SceneManager.LoadScene(scene);
+
+        //play fade in animation
+        transition.SetTrigger("Start");
     }
 }

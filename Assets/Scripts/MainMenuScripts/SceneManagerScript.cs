@@ -52,19 +52,4 @@ public class SceneManagerScript : MonoBehaviour
     {
         PreviousScene();
     }
-
-    //transition the scene to the HomeScene when the start game button is pressed
-    //public void LaunchGame()
-    //{
-    //    LoadScene("MainBaseScene");
-    //}
-
-    //Take the user to the Controls Scene
-    //public void ControlsScene()
-    //{
-    //    LoadScene("ControlsScene");
-    //}
-
-   
-
 }

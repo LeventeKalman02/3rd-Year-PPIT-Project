@@ -12,7 +12,7 @@ public class PortalTeleport : MonoBehaviour
         //check for the Player tag
         if (other.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene("ArenaScene");
+            SceneTransitionScript.instance.StartAnimation("ArenaScene");
         }
     }
 }
