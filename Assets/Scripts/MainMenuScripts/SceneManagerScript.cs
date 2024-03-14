@@ -5,9 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagerScript : MonoBehaviour
 {
-    //public Animator transition;
-    //public float transitionTime = 1f;
-
     private List<string> sceneHistory = new List<string>(); //running history of scenes
     //The last string in the list is always the current scene running
 
@@ -24,7 +21,6 @@ public class SceneManagerScript : MonoBehaviour
     {
         sceneHistory.Add(newScene);
         SceneManager.LoadScene(newScene);
-        //(TransitionScene(SceneManager.GetActiveScene().name));
     }
 
     //Remove the current scene from the history and then load the new last scene in the history
@@ -40,22 +36,9 @@ public class SceneManagerScript : MonoBehaviour
         }
 
         sceneHistory.Add(SceneManager.GetActiveScene().name);
-        //StartCoroutine(TransitionScene(SceneManager.GetActiveScene().name));
 
         return returnValue;
     }
-
-    //transition the scene to the HomeScene when the start game button is pressed
-    //public void LaunchGame()
-    //{
-    //    LoadScene("MainBaseScene");
-    //}
-
-    //Take the user to the Controls Scene
-    //public void ControlsScene()
-    //{
-    //    LoadScene("ControlsScene");
-    //}
 
     //Quit the application if user presses the button
     public void ExitGame()
@@ -70,19 +53,18 @@ public class SceneManagerScript : MonoBehaviour
         PreviousScene();
     }
 
-
-    //WIP
-
-    //Coroutine for animation and delay
-    //IEnumerator TransitionScene(string newScene)
+    //transition the scene to the HomeScene when the start game button is pressed
+    //public void LaunchGame()
     //{
-    //    //play animation
-    //    transition.SetTrigger("Start");
-
-    //    //wait for the animation to play
-    //    yield return new WaitForSeconds(transitionTime);
-
-    //    sceneHistory.Add(newScene);
-    //    SceneManager.LoadScene(newScene);
+    //    LoadScene("MainBaseScene");
     //}
+
+    //Take the user to the Controls Scene
+    //public void ControlsScene()
+    //{
+    //    LoadScene("ControlsScene");
+    //}
+
+   
+
 }
