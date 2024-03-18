@@ -295,6 +295,11 @@ MonoBehaviour:
   Melee: {fileID: 5075757563084010345}
   atkDuration: 0.3
   atkTimer: 0
+  Aim: {fileID: 808342952841659714}
+  bullet: {fileID: 7194061219111293854, guid: 4c1f8dae9bfc80c4d975a7d987f55481, type: 3}
+  fireForce: 13
+  shootCooldown: 0.25
+  shootTimer: 0.5
 --- !u!1 &5075757563084010345
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,6 +447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  weaponType: 0
 --- !u!1 &7837517128016164122
 GameObject:
   m_ObjectHideFlags: 0
