@@ -12,6 +12,7 @@ public class PortalTeleport : MonoBehaviour
         //check for the Player tag
         if (other.gameObject.tag == "Player")
         {
+            //call the singleton in the scene transition script to load the scene
             SceneTransitionScript.instance.StartAnimation("ArenaScene");
         }
     }
