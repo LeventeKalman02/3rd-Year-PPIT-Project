@@ -33,7 +33,7 @@ public class EnemyScript : MonoBehaviour
         if (player)
         {
             Vector3 direction = (player.position - transform.position).normalized;//use normalized as we dont use rotation
-            moveDirection= direction;
+            moveDirection = direction;
         }
     }
 

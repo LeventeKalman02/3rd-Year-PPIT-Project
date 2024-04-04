@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class PortalTeleport : MonoBehaviour
 {
+    [SerializeField] private string sceneName;
+
     //when player enters the portal, transfer to the fighting arena
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -13,7 +15,7 @@ public class PortalTeleport : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             //call the singleton in the scene transition script to load the scene
-            SceneTransitionScript.instance.StartAnimation("ArenaScene");
+            SceneTransitionScript.instance.StartAnimation(sceneName);
         }
     }
 }
