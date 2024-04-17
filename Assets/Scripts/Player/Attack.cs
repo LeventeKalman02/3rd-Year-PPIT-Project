@@ -34,7 +34,7 @@ public class Attack : MonoBehaviour
         }
     }
 
-    //meleeing
+    //melee attack
     private void OnAttack()
     {
         if(!isAttacking)

@@ -29,10 +29,10 @@ public class PlayerHealth : MonoBehaviour
     void Update()
     {
         //testing damage and healthbar
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(20);
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    TakeDamage(20);
+        //}
         ProcessDeath();
     }
 
