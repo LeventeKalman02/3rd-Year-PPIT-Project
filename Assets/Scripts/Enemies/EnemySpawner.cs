@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //enemy spawner works off a wave based system so that the enemies spawned are random
-//enemies will have a "cost" assigned to them that the script can choose which enemies to spawn
+//enemies will have a "cost" assigned to them so that the script can choose which enemies to spawn
 public class EnemySpawner : MonoBehaviour
 {
     //list for the different enemy types
     public List<Enemy> enemies = new List<Enemy>();
     public int currWave;
     public int waveValue;
-    private List<GameObject> enemiesToSpawn = new List<GameObject>();
-    private List<GameObject> spawnedEnemies = new List<GameObject>();
+    public List<GameObject> enemiesToSpawn = new List<GameObject>();
+    public List<GameObject> spawnedEnemies = new List<GameObject>();
     [SerializeField] private GameObject portal;
 
     public Transform spawnLocation;
@@ -72,8 +72,9 @@ public class EnemySpawner : MonoBehaviour
             GenerateWave();
         }
         else
-        {
+        { 
             portal.SetActive(false);
+            GenerateWave();
         }
     }
 
@@ -91,7 +92,7 @@ public class EnemySpawner : MonoBehaviour
             }
         }
 
-        //check if spawnedEnemies.count == 0 && check if waveTimer == 0 to make sure all enemies in the wave have been killed
+        //check if spawnedEnemies.count == 0 && check if waveTimer == 0 to make sure all enemies in the wave have been spawned
         //if true, increase wave
         if (spawnedEnemies.Count == 0 && waveTimer == 0 && isSpawning)
         {

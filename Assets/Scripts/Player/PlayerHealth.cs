@@ -53,6 +53,7 @@ public class PlayerHealth : MonoBehaviour
             deathScreen.SetActive(true);
             //set everything the player can do to false
             playerSprite.enabled = false;
+            playerMove.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             playerMove.enabled = false;
             playerAttack.enabled = false;
         }

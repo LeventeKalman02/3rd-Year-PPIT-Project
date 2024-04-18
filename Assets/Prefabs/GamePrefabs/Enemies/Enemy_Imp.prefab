@@ -10,8 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 636307880735104304}
   - component: {fileID: 5325481117720610793}
-  - component: {fileID: 5459519451236327062}
-  - component: {fileID: 2959265907606311086}
   m_Layer: 0
   m_Name: AtkRadius
   m_TagString: Untagged
@@ -86,55 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &5459519451236327062
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1334938181727358719}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
---- !u!114 &2959265907606311086
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1334938181727358719}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39e57d78e7d55174db3977fc60fba394, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  atkdamage: 10
-  atkDelay: 1
 --- !u!1 &2709964765404587733
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,5 +295,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   melee: {fileID: 1334938181727358719}
-  atkDuration: 1
-  atkTimer: 0
+  atkdamage: 10
+  atkrange: 2
+  atkDelay: 1
